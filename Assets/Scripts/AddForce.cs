@@ -26,22 +26,22 @@ public class AddForce : MonoBehaviour
         }
     }
     void FixedUpdate()
-    {
-        if(Input.GetKey(KeyCode.A))
-        {
-            _rb.AddForce(-5, 0f, 0f);
-        }
-        if(Input.GetKey(KeyCode.D)) 
-        {
-            _rb.AddForce(5, 0f, 0f);
-        }
+    {        
         if(Input.GetKey(KeyCode.W))
         {
             _rb.AddForce(0f, 0f, 5);
         }
-        if(Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.A))
+        {
+            _rb.AddForce(-5, 0f, 0f);
+        }
+        if (Input.GetKey(KeyCode.S))
         {
             _rb.AddForce(0f,0f, -5);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            _rb.AddForce(5, 0f, 0f);
         }
     }
 }
