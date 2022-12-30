@@ -2,32 +2,36 @@ using UnityEngine;
 
 public class AddForce : MonoBehaviour
 {
-    [SerializeField] private Transform cueParent;
+    [SerializeField] private Transform cueParent;    
 
     private Rigidbody _rb;
-
+   
     private void Awake()
     {
-        _rb = GetComponent<Rigidbody>();
+        _rb= GetComponent<Rigidbody>();
     }
 
     private void Update()
-    {
+    {        
+        if(Input.GetMouseButtonDown(0))
+        {
+            _rb.AddForce(10, 0f, 0f, ForceMode.Impulse);            
+        }
+        if(Input.GetKeyDown(KeyCode.Space)) 
+        {
+            _rb.AddForce(0f, 250, 0f);
+        }
         if (cueParent != null)
         {
             Vector3 pivotVector = Input.mousePosition - Camera.main.WorldToScreenPoint(cueParent.position);
             float angle = Mathf.Atan2(pivotVector.y, pivotVector.x) * Mathf.Rad2Deg;
             cueParent.rotation = Quaternion.AngleAxis(-angle - 180, Vector3.up);
-        }
-
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            _rb.AddForce(0f, 250, 0f);
-        }
+        }        
     }
+
     void FixedUpdate()
     {        
-        if(Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W))
         {
             _rb.AddForce(0f, 0f, 5);
         }
