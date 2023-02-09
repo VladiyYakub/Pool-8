@@ -807,6 +807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 278803240}
+  - component: {fileID: 278803241}
   m_Layer: 6
   m_Name: Cue Parrent
   m_TagString: Untagged
@@ -829,6 +830,21 @@ Transform:
   m_Father: {fileID: 1409086467}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &278803241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278803239}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe0b0da0a38fad94991a23012ca3486f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectDisable: {fileID: 278803239}
+  _cueParent: {fileID: 278803240}
+  _target: {x: 0, y: 0, z: 0}
 --- !u!1001 &323012479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2578,38 +2594,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cueParent: {fileID: 278803240}
   cue: {fileID: 2012119033}
+  _target: {x: 0.1, y: 0.1, z: 0.1}
+  _objectDisable: {fileID: 278803239}
   RotationSpeed: 10
   ForceValue: 1000
---- !u!114 &1409086460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1409086458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fe85c0d9d369d644acdd9fab1062447, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _balls:
-  - {fileID: 1409086463}
-  - {fileID: 1254481953}
-  - {fileID: 140327277}
-  - {fileID: 253319160}
-  - {fileID: 1148817019}
-  - {fileID: 1294149314}
-  - {fileID: 329731438}
-  - {fileID: 79333670}
-  - {fileID: 1103624933}
-  - {fileID: 1681451145}
-  - {fileID: 504551747}
-  - {fileID: 2047982598}
-  - {fileID: 812915271}
-  - {fileID: 1161880250}
-  - {fileID: 113929021}
-  - {fileID: 2033964611}
-  _cue: {fileID: 278803239}
 --- !u!54 &1409086463
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2626,20 +2614,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1409086464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1409086458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe0b0da0a38fad94991a23012ca3486f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectDisable: {fileID: 278803239}
-  _target: {x: 0, y: 0, z: 0}
 --- !u!4 &1409086467 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7701633360172936869, guid: d9f5b807b173f5c4f9dc4881149c3582, type: 3}
