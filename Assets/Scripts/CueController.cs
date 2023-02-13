@@ -1,12 +1,12 @@
 using UnityEngine;
-using UnityEngine.UIElements;
-using System;
-using static UnityEngine.GraphicsBuffer;
 
 public class CueController : MonoBehaviour
 {
     [SerializeField] private Transform cueParent;
     [SerializeField] private GameObject cue;
+    [SerializeField] private WhiteBall whiteBall;
+
+    public bool IsCueActive => _isCueActive;
 
     private Rigidbody _rb;
     public float RotationSpeed = 100.0f;
@@ -19,14 +19,15 @@ public class CueController : MonoBehaviour
         _isCueActive = true;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (_isCueActive)
         {
             if (Input.GetMouseButtonUp(0))
             {
+                whiteBall.SetIsKinematic(false);
                 _rb.AddForce(cueParent.right * ForceValue, ForceMode.Force);
-                _isCueActive = false;
+                SetCueActive(false);
             }
             else if (cueParent != null)
             {
